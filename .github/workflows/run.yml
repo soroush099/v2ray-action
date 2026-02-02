@@ -57,4 +57,9 @@ jobs:
 
       - name: Run Tunnel
         run: |
-          ./cloudflared tunnel --rl tcp://127.0.0.1:10000 --no-autoupdate
+          ./cloudflared tunnel \
+            --url tcp://127.0.0.1:10000 \
+            --no-autoupdate \
+            --loglevel info
+      - name: Keep job alive
+        run: sleep 21000
