@@ -57,4 +57,4 @@ jobs:
 
       - name: Run Tunnel
         run: |
-          cloudflared tunnel --url tcp://localhost:10000
+          ./cloudflared tunnel --rl tcp://127.0.0.1:10000 --no-autoupdate
