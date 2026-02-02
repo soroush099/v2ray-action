@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Install Xray
         run: |
-          sudo bash <(curl -Ls https://raw.githubusercontent.com/XTLS/Xray-install/main/install-release.sh)
+          curl -Ls https://raw.githubusercontent.com/XTLS/Xray-install/main/install-release.sh | sudo bash
 
       - name: Create config
         run: |
@@ -47,7 +47,7 @@ jobs:
 
       - name: Run Xray (background)
         run: |
-          nohup xray run -config config.json > xray.log 2>&1 &
+          nohup /usr/local/bin/xray run -config config.json > xray.log 2>&1 &
 
       - name: Install cloudflared
         run: |
